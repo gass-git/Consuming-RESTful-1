@@ -32,6 +32,6 @@ public class Dog {
     public void setStatus(String status){ this.status = status; }
 
     public String toString(){
-        return "something";
+        return "Image URL of a random dog: " + message;
     }
 }

@@ -16,10 +16,15 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 public class App {
+	public static Logger log = LoggerFactory.getLogger(App.class);
 
 	/* 
-	 * The main() method is the starting point for JVM (Java Virtual Machine) 
-	 * to start execution of a Java program. It only runs once.
+	 * The main() method:
+	 * is the starting point for JVM (Java Virtual Machine) 
+	 * to start execution of a Java program. It only runs once. It is globaly
+	 * available.
+	 * 
+	 * it can be thought out as a method that is outside the main class.
 	 */
 	public static void main(String[] args){
 		
@@ -33,8 +38,6 @@ public class App {
 		 */
 		SpringApplication.run(App.class, args);
     }   
-
-	public static Logger log = LoggerFactory.getLogger(App.class);
 	
 	/*
 	 * @Bean: 
@@ -53,12 +56,12 @@ public class App {
 
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-		return args -> {
+		return (args) -> {
 			Dog dog = restTemplate.getForObject(
 				"https://dog.ceo/api/breeds/image/random",
 				Dog.class
 			);
-			log.info(dog.getMessage());
+			log.info(dog.toString());
 		};
 	}
 }
