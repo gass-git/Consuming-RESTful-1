@@ -20,8 +20,14 @@ public class Dog {
     private String message;
     private String status;
 
-    // ?? 
-    // referance: https://spring.io/guides/gs/consuming-rest/
+    /*
+     * Empty constructor:
+     * If you don't provide any additional constructors with arguments
+     * for the class, you don't need to provide an empty constructor 
+     * because you get one per default. 
+     * 
+     * more info: https://stackoverflow.com/questions/18099127/java-entity-why-do-i-need-an-empty-constructor
+     */
     public Dog(){}
 
     // Getters
