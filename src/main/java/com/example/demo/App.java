@@ -9,6 +9,11 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+/*
+ * @SpringBootApplication annotation is used to mark a configuration 
+ * class that declares one or more @Bean methods and also triggers 
+ * auto-configuration and component scanning.
+ */
 @SpringBootApplication
 public class App {
 
@@ -31,6 +36,16 @@ public class App {
 
 	public static Logger log = LoggerFactory.getLogger(App.class);
 	
+	/*
+	 * @Bean: 
+	 * instance of a class managed by the Spring container.
+	 *
+	 * Spring container: 
+	 * is part of the core of the Spring framework and is responsible for
+	 * managing all the beans. Creates the intances and it makes sure that they
+	 * are in the right place and the right time to run the application.
+	 * 
+	 */
 	@Bean 
 	public RestTemplate restTemplate(RestTemplateBuilder builder){
 		return builder.build();
