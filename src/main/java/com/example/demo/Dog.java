@@ -20,7 +20,8 @@ public class Dog {
     private String message;
     private String status;
 
-    // ??
+    // ?? 
+    // referance: https://spring.io/guides/gs/consuming-rest/
     public Dog(){}
 
     // Getters
